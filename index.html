@@ -45,7 +45,7 @@
       width: 800px;
       height: 600px;
       background-color: #000;
-      border: 1px solid #888;
+      border: 0;
     }
 
     .container {
@@ -82,16 +82,7 @@
       if (path.endsWith(".data")) { return ("./" + path); }
       return (prefix + path);
     },
-    onRuntimeInitialized: function () { },
-    contextAttributes: {
-      alpha: true,
-      depth: true,
-      stencil: false,
-      antialias: false,
-      premultipliedAlpha: false,
-      preserveDrawingBuffer: false,
-      powerPreference: "default"
-    }
+    onRuntimeInitialized: function () { }
   };
   var wasm_is_alive = false;
   function wasm_i(op, d0, d1, d2) { Module.ccall("wasm_i", null, ["string", "string", "string", "string"], [op, d0, d1, d2]); }
